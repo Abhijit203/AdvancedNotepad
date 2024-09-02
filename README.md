@@ -11,11 +11,9 @@ root.title("Untitled-Notepad")
 #root.wm_iconbitmap("3.ico")
 root.geometry("800x600")
 
-# Initialize notebook for tabs
 notebook = ttk.Notebook(root)
 notebook.pack(fill=BOTH, expand=True)
 
-# Dictionary to store file paths for each tab to save files independently in each tab
 file_paths = {}
 tabCount = 1
 def newTab():
@@ -60,6 +58,7 @@ def openFile():
     global File, TextArea
     File = askopenfilename(defaultextension=".txt", filetypes=[("All Files", "."), ("Text Documents", "*.txt")])
     if File == "":
+
         File = None
     else:
         TextArea = newTab()
